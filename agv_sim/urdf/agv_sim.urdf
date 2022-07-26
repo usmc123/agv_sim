@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="agv_sim">
+
+  <link name="base_foot_print"/>
+
+  <joint name="foot2base" type="fixed">
+    <parent link="base_foot_print"/>
+    <child link="base_link"/>
+    <origin
+      xyz="0 0 0.315"
+      rpy="0 0 0" />
+  </joint>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000572457803951106 5.8095694305758E-05 -0.0248970986198941"
+        rpy="0 0 0" />
+      <mass
+        value="70.831722762647" />
+      <inertia
+        ixx="8.41485617960419"
+        ixy="0.0003138074825713"
+        ixz="0.000620691878247195"
+        iyy="8.39616225644627"
+        iyz="6.28598680580758E-05"
+        izz="16.7814288389134" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_turn1">
+    <inertial>
+      <origin
+        xyz="-1.57313721468877E-05 2.08881151264606E-09 -0.112603648712901"
+        rpy="0 0 0" />
+      <mass
+        value="4.00473648526945" />
+      <inertia
+        ixx="0.0253784938511554"
+        ixy="-4.20655727353763E-10"
+        ixz="-7.80936621694287E-07"
+        iyy="0.0224402493991133"
+        iyz="-1.7416278261475E-10"
+        izz="0.00760667733951808" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_turn1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_turn1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_turn1"
+    type="revolute">
+    <origin
+      xyz="0.50147 -0.49985 -0.24"
+      rpy="3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_turn1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="6"
+      velocity="6.28" />
+  </joint>
+  <link
+    name="link_wheel1">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="2.23959617519268" />
+      <inertia
+        ixx="0.00336281943850301"
+        ixy="-1.01893319697208E-36"
+        ixz="-2.08070825435685E-20"
+        iyy="0.00336281943850301"
+        iyz="-3.05466642246581E-36"
+        izz="0.0056821214893179" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_wheel1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_wheel1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel1"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link_turn1" />
+    <child
+      link="link_wheel1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="2.5"
+      velocity="26.17" />
+  </joint>
+  <link
+    name="link_turn2">
+    <inertial>
+      <origin
+        xyz="-1.57313721468877E-05 2.08881145713491E-09 -0.112603648712903"
+        rpy="0 0 0" />
+      <mass
+        value="4.00473648526945" />
+      <inertia
+        ixx="0.0253784938511554"
+        ixy="-4.2065572642052E-10"
+        ixz="-7.80936621695284E-07"
+        iyy="0.0224402493991133"
+        iyz="-1.74162778061351E-10"
+        izz="0.00760667733951808" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_turn2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_turn2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_turn2"
+    type="revolute">
+    <origin
+      xyz="0.50147 0.50015 -0.24"
+      rpy="3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_turn2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="6"
+      velocity="6.28" />
+  </joint>
+  <link
+    name="link_wheel2">
+    <inertial>
+      <origin
+        xyz="-1.55431223447522E-15 -2.77555756156289E-17 9.99200722162641E-16"
+        rpy="0 0 0" />
+      <mass
+        value="2.23959617519268" />
+      <inertia
+        ixx="0.00336281943850301"
+        ixy="-1.96015235160114E-34"
+        ixz="-1.60338783836118E-19"
+        iyy="0.00336281943850301"
+        iyz="-1.6278952830908E-19"
+        izz="0.0056821214893179" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_wheel2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_wheel2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel2"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link_turn2" />
+    <child
+      link="link_wheel2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="2.5"
+      velocity="26.17" />
+  </joint>
+  <link
+    name="link_turn3">
+    <inertial>
+      <origin
+        xyz="-1.57313721469432E-05 2.08881134611261E-09 -0.112603648712901"
+        rpy="0 0 0" />
+      <mass
+        value="4.00473648526944" />
+      <inertia
+        ixx="0.0253784938511554"
+        ixy="-4.20655726066614E-10"
+        ixz="-7.8093662169496E-07"
+        iyy="0.0224402493991132"
+        iyz="-1.74162772229254E-10"
+        izz="0.00760667733951807" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_turn3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_turn3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_turn3"
+    type="revolute">
+    <origin
+      xyz="-0.49853 0.50015 -0.24"
+      rpy="-3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_turn3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="6"
+      velocity="6.28" />
+  </joint>
+  <link
+    name="link_wheel3">
+    <inertial>
+      <origin
+        xyz="4.44089209850063E-16 -2.77555756156289E-17 1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="2.23959617519268" />
+      <inertia
+        ixx="0.00336281943850301"
+        ixy="4.31447688135461E-20"
+        ixz="3.74225696272364E-21"
+        iyy="0.00336281943850301"
+        iyz="-4.44840036424112E-20"
+        izz="0.00568212148931791" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_wheel3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_wheel3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel3"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="link_turn3" />
+    <child
+      link="link_wheel3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="2.5"
+      velocity="26.17" />
+  </joint>
+  <link
+    name="link_turn4">
+    <inertial>
+      <origin
+        xyz="-1.57313721477204E-05 2.08881151264606E-09 -0.112603648712896"
+        rpy="0 0 0" />
+      <mass
+        value="4.00473648526944" />
+      <inertia
+        ixx="0.0253784938511554"
+        ixy="-4.20655746938193E-10"
+        ixz="-7.80936621821724E-07"
+        iyy="0.0224402493991132"
+        iyz="-1.74162781506843E-10"
+        izz="0.00760667733951807" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_turn4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_turn4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_turn4"
+    type="revolute">
+    <origin
+      xyz="-0.49853 -0.49985 -0.24"
+      rpy="3.1416 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_turn4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="6"
+      velocity="6.28" />
+  </joint>
+  <link
+    name="link_wheel4">
+    <inertial>
+      <origin
+        xyz="-3.21964677141295E-15 2.77555756156289E-17 -9.43689570931383E-16"
+        rpy="0 0 0" />
+      <mass
+        value="2.23959617519268" />
+      <inertia
+        ixx="0.00336281943850301"
+        ixy="1.96015921784653E-34"
+        ixz="1.60338783836118E-19"
+        iyy="0.00336281943850301"
+        iyz="-1.61646033830288E-19"
+        izz="0.0056821214893179" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_wheel4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://agv_sim/meshes/link_wheel4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel4"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="link_turn4" />
+    <child
+      link="link_wheel4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="2.5"
+      velocity="26.17" />
+  </joint>
+
+  <transmission name="tran_turn1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_turn1">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motorturn1">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+    </actuator> 
+    </transmission>
+
+    <transmission name="tran_turn2">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="joint_turn2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor_turn2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator> 
+      </transmission>
+
+      <transmission name="tran_turn3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_turn3">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_turn3">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+        </actuator> 
+        </transmission>
+
+    <transmission name="tran_turn4">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="joint_turn4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor_turn4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator> 
+      </transmission>
+
+    <transmission name="tran_wheel1">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="joint_wheel1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor_wheel1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator> 
+      </transmission>
+    <transmission name="tran_wheel2">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="joint_wheel2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor_wheel2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      </actuator> 
+      </transmission>
+
+  <transmission name="tran_wheel3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_wheel3">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_wheel3">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+    </actuator> 
+    </transmission>
+
+  <transmission name="tran_wheel4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_wheel4">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_wheel4">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+    </actuator> 
+    </transmission>
+
+ 
+
+
+
+
+</robot>

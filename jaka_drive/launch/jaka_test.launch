@@ -1,0 +1,16 @@
+<launch>
+
+    <node
+    name="drive_test"
+    pkg="jaka_drive"
+    type="drive_test" 
+    output="screen"/>
+    <node
+    name="usart_test"
+    pkg="agv_sim_control_test"
+    type="usart_test_node" 
+    output="screen"/>
+
+
+
+</launch>

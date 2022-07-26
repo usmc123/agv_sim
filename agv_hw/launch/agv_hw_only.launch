@@ -1,0 +1,5 @@
+<launch>
+    <rosparam file="$(find agv_hw)/config/robothw.yaml" command="load"/>
+    <node pkg = "agv_hw" name = "agv_main_node" type = "agv_main_node" output = "screen"/>
+
+</launch>

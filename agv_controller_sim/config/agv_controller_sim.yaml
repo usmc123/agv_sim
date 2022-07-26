@@ -1,0 +1,13 @@
+
+agv_sim:
+  turn_wheel_fk_controller_sim:
+    type: agv_controller_ns/agv_controller_sim
+    joint: 
+        - joint_turn1
+        - joint_turn2
+        - joint_turn3
+        - joint_turn4
+        - joint_wheel1
+        - joint_wheel2
+        - joint_wheel3
+        - joint_wheel4

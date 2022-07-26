@@ -1,0 +1,32 @@
+<launch>
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <node
+    name="tf_footprint_base"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 base_link base_footprint 40" />
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find agv_sim)/urdf/agv_sim.xacro -urdf -model agv_sim"
+    output="screen" />
+
+
+
+    <!-- args="-file $(find agv_sim)/urdf/agv_sim.urdf -urdf -model agv_sim" -->
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+
+    <param name="robot_description"
+      command="$(find xacro)/xacro --inorder '$(find agv_sim)/urdf/agv_sim.xacro'" />
+
+      
+    <rosparam file="$(find agv_sim)/config/gazeboros_joint_param.yaml" command="load"/>
+
+
+</launch>

@@ -1,0 +1,8 @@
+<library path="lib/libAgv_Controller_lib">
+    <class name="agv_controller_ns/Agv_Controller" 
+           type="agv_controller_ns::Agv_Controller"           
+           base_class_type="controller_interface::ControllerBase" />
+      <description>
+        fuck test??????????
+      </description>
+  </library>

@@ -1,0 +1,30 @@
+agv_sim:
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  joint_turn1_prosition_controller:
+    type: effort_controllers/JointPositionController
+    joint: joint_turn1
+    pid: {p: 100, i: 0.01, d: 10.0}
+  joint_wheel1_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: joint_wheel1
+    pid: {p: 100, i: 0.01, d: 10.0}
+  turn_wheel_fk_controller:
+    type: agv_controller_ns/Agv_Controller
+    joint: 
+        - joint_turn1
+        - joint_turn2
+        - joint_turn3
+        - joint_turn4
+        - joint_wheel1
+        - joint_wheel2
+        - joint_wheel3
+        - joint_wheel4
+        # - arm_joint1
+        # - arm_joint2
+        # - arm_joint3
+        # - arm_joint4
+        # - arm_joint5
+        # - arm_joint6

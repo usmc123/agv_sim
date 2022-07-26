@@ -1,0 +1,9 @@
+<library path="lib/libAgvInterface">
+    <class name="agv_controller_ns/AgvInterface" 
+    type="agv_controller_ns::AgvInterface" 
+    base_class_type="hardware_interface::RobotHW">
+      <description>
+        Interface for AgvInterface
+      </description>
+    </class>
+</library>
